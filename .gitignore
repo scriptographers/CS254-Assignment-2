@@ -1,4 +1,5 @@
-# ignore Quartus II generated files
+# Ignore Quartus generated files
+
 *.qpf
 *.qsf
 *_generation_script*
@@ -24,13 +25,12 @@
 *.sopc_builder
 *.summary
 *.tcl
-*.txt # Explicitly add any text files used
-*~
 *example*
 *sopc_*
-# *.sdc # I want those timing files
+# *.sdc
 
-# ignore Quartus II generated folders
+# Ignore Quartus generated folders
+
 */db/
 */incremental_db/
 */simulation/
