@@ -12,12 +12,12 @@ end entity;
 
 architecture arch of decoder is
 begin
-	output(0) <= (not input(0) and not input(1) and not input(2));
-	output(1) <= (not input(0) and not input(1) and input(2));
-	output(2) <= (not input(0) and input(1) and not input(2));
-	output(3) <= (not input(0) and input(1) and input(2));
-	output(4) <= (input(0) and not input(1) and not input(2));
-	output(5) <= (input(0) and not input(1) and input(2));
-	output(6) <= (input(0) and input(1) and not input(2));
-	output(7) <= (input(0) and input(1) and input(2));
+	output(7) <= (not input(2) and not input(1) and not input(0));
+	output(6) <= (not input(2) and not input(1) and input(0));
+	output(5) <= (not input(2) and input(1) and not input(0));
+	output(4) <= (not input(2) and input(1) and input(0));
+	output(3) <= (input(2) and not input(1) and not input(0));
+	output(2) <= (input(2) and not input(1) and input(0));
+	output(1) <= (input(2) and input(1) and not input(0));
+	output(0) <= (input(2) and input(1) and input(0));
 end arch;
