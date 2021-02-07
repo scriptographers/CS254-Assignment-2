@@ -1,4 +1,4 @@
--- TOP MODULE EightbyThreeEncode
+-- Top Module: EightbyThreeEncode
 library work;
 use work.all;
 
@@ -13,9 +13,9 @@ entity EightbyThreeEncode is
 	);
 end entity;
 
-architecture Arch of EightbyThreeEncode is
+architecture arch of EightbyThreeEncode is
 
-	signal encoder_output: std_logic_vector(2 downto 0);
+	signal encoder_output: std_logic_vector(2 downto 0); -- output of the encoder block, to be passed to the enabler
 	
 	component encoder is
 		port ( 
@@ -38,4 +38,4 @@ begin
 		
 	enb: enabler
 		port map(input => encoder_output, en => en, output => z);
-end Arch;
+end arch;

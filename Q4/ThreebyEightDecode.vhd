@@ -1,4 +1,5 @@
--- TOP MODULE: EightbyThreeEncode
+-- Top Module: EightbyThreeEncode
+
 library work;
 use work.all;
 
@@ -15,11 +16,11 @@ end entity;
 
 architecture arch of ThreebyEightDecode is
 
-	signal decoder_output: std_logic_vector(7 downto 0);
+	signal decoder_output: std_logic_vector(7 downto 0); -- The output of the decoder block. This passed to the enabler
 	
 	component decoder is
 		port ( 
-			i : in std_logic_vector(2 downto 0);
+			input  : in  std_logic_vector(2 downto 0);
 			output : out std_logic_vector(7 downto 0)
 		);
 	end component;
@@ -34,7 +35,7 @@ architecture arch of ThreebyEightDecode is
 	
 begin
 	dec: decoder
-		port map(i => i, output => decoder_output);
+		port map(input => i, output => decoder_output);
 		
 	enb: enabler
 		port map(input => decoder_output, en => en, output => z);
